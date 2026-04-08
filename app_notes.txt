@@ -1,0 +1,35 @@
+initial app source: ostad django-react module 33, aug 4, 2025 by Tanvir Imam
+github: https://github.com/cm2889/gmini_chatbot
+
+=========
+pwsh:
+python -m venv venv 
+venv\Scripts\activate
+python --version
+pip list
+pip install django==5.2.4
+-- pip install google-generativeai (deprecated)
+pip install google-genai
+pip install python-dotenv
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+---
+create gemini api key, use in settings
+python manage.py runserver
+
+http://127.0.0.1:8000/
+http://127.0.0.1:8000/chat
+
+====
+github upload:
+git init
+git status
+git add .
+git commit -m "initial commit"
+git branch -M main
+git remote add origin https://github.com/anup-sdp/dj_gemini_chatbot.git
+git push -u origin main
+
+
+

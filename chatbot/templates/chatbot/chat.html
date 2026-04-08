@@ -1,0 +1,32 @@
+<!-- chatbot/templates/chatbot/chat.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gemini Chatbot</title>
+</head>
+<body>
+    <h1>Gemini Chatbot</h1>
+    <form id="chat-form">
+        <input type="text" id="message" autocomplete="off" required>
+        <button type="submit">Send</button>
+    </form>
+    <div id="chat-log"></div>
+    <script>
+        const form = document.getElementById('chat-form');
+        const chatLog = document.getElementById('chat-log');
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            const message = document.getElementById('message').value;
+            chatLog.innerHTML += `<div><b>You:</b> ${message}</div>`;
+            const response = await fetch("", {
+                method: "POST",
+                headers: {"Content-Type": "application/x-www-form-urlencoded"},
+                body: `message=${encodeURIComponent(message)}`
+            });
+            const data = await response.json();
+            chatLog.innerHTML += `<div><b>Bot:</b> ${data.response}</div>`;
+            form.reset();
+        };
+    </script>
+</body>
+</html>

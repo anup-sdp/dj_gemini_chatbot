@@ -1,0 +1,9 @@
+# Ignore virtual environment directories, compiled Python files, database, logs, and .env file
+venv
+.venv
+__pycache__/
+*.pyc
+#db.sqlite3
+*.log
+# Ignore .env file containing sensitive information
+.env
